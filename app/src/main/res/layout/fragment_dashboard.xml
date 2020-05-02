@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back"
+    tools:context="fragment.Dashboard">
+    <ImageView
+        android:layout_width="200dp"
+        android:padding="30dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/white"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/IV_Main"
+        android:elevation="25dp"
+        android:src="@drawable/logo"/>
+    <View
+        android:layout_width="350dp"
+        android:layout_height="3dp"
+        android:id="@+id/line_user"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/IV_Main"
+        android:layout_centerInParent="true"
+        android:background="#D5D4D4"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:id="@+id/C1"
+        android:elevation="30dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="50dp"
+        android:layout_below="@id/line_user">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Restaurants"
+                android:textSize="24sp"
+                />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="95dp"
+                android:layout_height="85dp"
+                android:src="@drawable/ic_restaurant"
+                android:background="@drawable/card_view"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:id="@+id/C2"
+        android:layout_height="150dp"
+        android:elevation="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/line_user"
+        android:layout_toRightOf="@id/C1"
+        android:layout_marginLeft="30dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="My Orders"
+                android:textSize="24sp"
+                />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="95dp"
+                android:layout_height="85dp"
+                android:src="@drawable/orders"
+                android:background="@drawable/card_view1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:id="@+id/C3"
+        android:elevation="30dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/C1"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="My Account"
+                android:textSize="24sp"
+                />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="95dp"
+                android:layout_height="85dp"
+                android:src="@drawable/account"
+                android:background="@drawable/card_view2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        android:id="@+id/C4"
+        android:layout_height="150dp"
+        android:elevation="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/C2"
+        android:layout_toRightOf="@id/C3"
+        android:layout_marginLeft="30dp"
+       >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="My Address"
+                android:textSize="24sp"
+                />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="95dp"
+                android:layout_height="85dp"
+                android:src="@drawable/location"
+                android:background="@drawable/card_view4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

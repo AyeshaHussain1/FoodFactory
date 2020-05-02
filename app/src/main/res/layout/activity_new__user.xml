@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffff"
+    tools:context=".New_User">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/user_TV"
+        android:fontFamily="@font/bubblegum_sans"
+        android:text="@string/New_acc"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp" />
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/Image"
+        android:layout_below="@id/user_TV"
+        android:layout_centerInParent="true"
+        android:background="@drawable/background_round"
+        android:src="@drawable/user"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"/>
+    <View
+        android:layout_width="300dp"
+        android:layout_height="2dp"
+        android:id="@+id/line_user"
+        android:layout_below="@id/user_TV"
+        android:layout_centerInParent="true"
+        android:background="#D5D4D4"/>
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:id="@+id/Name_ET1"
+        android:layout_below="@+id/Image"
+        android:background="@drawable/new_user"
+        android:inputType="text"
+        android:layout_centerInParent="true"
+        android:hint="Enter User Name here"
+        android:maxLength="20"
+        android:maxLines="1"
+        android:nextFocusDown="@id/Email_ET2"
+        android:layout_marginTop="30dp"
+        />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:id="@+id/Email_ET2"
+        android:hint="@string/Email"
+        android:maxLength="15"
+        android:nextFocusDown="@id/Pwd_ET3"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/Name_ET1"
+        android:background="@drawable/new_user"
+        android:layout_centerInParent="true"
+        android:maxLines="1"
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:id="@+id/Pwd_ET3"
+        android:layout_below="@+id/Email_ET2"
+        android:background="@drawable/new_user"
+        android:layout_centerInParent="true"
+        android:hint="Enter Password here"
+        android:inputType="textPassword"
+        android:maxLength="10"
+        android:maxLines="1"
+        android:layout_marginTop="10dp"
+        />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:id="@+id/btn_user"
+        android:background="@drawable/google_button"
+        android:layout_below="@id/Pwd_ET3"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/user_submit"
+        android:textColor="#ffff"/>
+    <TextView
+        android:id="@+id/TV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="100dp"
+        android:layout_below="@id/btn_user"
+        android:text="Already have an account?"
+        android:textColor="@color/colorAccent"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/LoginTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/btn_user"
+        android:layout_toRightOf="@id/TV2"
+        android:text="LogIn"
+        android:textColor="@color/colorAccent"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:layout_alignParentBottom="true"
+       android:layout_marginBottom="40dp"
+        android:layout_marginStart="136dp"
+        android:background="@drawable/sub_logo"/>
+
+    <ProgressBar
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/bar"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/progress_bar"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        />
+</RelativeLayout>
