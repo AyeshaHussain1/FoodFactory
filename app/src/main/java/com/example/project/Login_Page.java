@@ -100,6 +100,7 @@ private GoogleSignInClient mGoogleSignInClient;
 
                         bar.setVisibility(View.INVISIBLE);
                         Toast.makeText(this, "User Logged Out Successfully", Toast.LENGTH_SHORT).show();
+                        Login.setEnabled(true);
                     } else {
                         objectFirebaseAuth.signInWithEmailAndPassword(Email.getText().toString(),
                                 Pwd.getText().toString())
@@ -108,7 +109,7 @@ private GoogleSignInClient mGoogleSignInClient;
                                     public void onSuccess(AuthResult authResult) {
                                         Login.setEnabled(true);
                                         bar.setVisibility(View.INVISIBLE);
-                                        Toast.makeText(Login_Page.this, "User Logged In", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(Login_Page.this, "User Logged In successfully", Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(Login_Page.this, Home_Page.class));
                                         finish();
                                     }
@@ -119,7 +120,7 @@ private GoogleSignInClient mGoogleSignInClient;
                                 Email.requestFocus();
 
                                 bar.setVisibility(View.INVISIBLE);
-                                Toast.makeText(Login_Page.this, "Fails To Sig-in User: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login_Page.this, "Failed To login : " + e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
@@ -142,7 +143,7 @@ private GoogleSignInClient mGoogleSignInClient;
                 Email.requestFocus();
 
                 bar.setVisibility(View.INVISIBLE);
-                Toast.makeText(this, "Logging In Error" + ex.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Logging_In Error" + ex.getMessage(), Toast.LENGTH_LONG).show();
             }
         }
 
@@ -190,12 +191,12 @@ private GoogleSignInClient mGoogleSignInClient;
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Toast.makeText(Login_Page.this, "signInWithCredential:success", Toast.LENGTH_SHORT).show();
-                            FirebaseUser user = mAuth.getCurrentUser();
+                            Toast.makeText(Login_Page.this, "Successfully signIn using gmail", Toast.LENGTH_SHORT).show();
+                            FirebaseUser User = mAuth.getCurrentUser();
                             Intent intent = new Intent(getApplicationContext(), Home_Page.class);
                             startActivity(intent);
                         } else {
-                            Toast.makeText(Login_Page.this, "signInWithCredential:failure" + task.getException().toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login_Page.this, "signIn unsuccessfull" + task.getException().toString(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

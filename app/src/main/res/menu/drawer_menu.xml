@@ -3,18 +3,24 @@
     android:id="@+id/drawer_menu">
     <group android:checkableBehavior="single"
         android:id="@+id/group">
+        <item android:id="@+id/Dashboard"
+            android:icon="@drawable/dashboard"
+            android:title="@string/home"
+            />
 
-        <item android:id="@+id/Restaurant"
+        <item android:id="@+id/Recipies"
             android:icon="@drawable/restaurant"
-            android:title="@string/resturants"
+            android:title="@string/recipies"
             />
-        <item android:id="@+id/location"
-            android:icon="@drawable/location"
-            android:title="Address"
-            />
+
         <item android:id="@+id/Review"
             android:icon="@drawable/review"
             android:title="@string/review"
+            />
+        <item android:id="@+id/myprofile"
+            android:icon="@drawable/profile"
+            android:title="@string/my_profile"
+            android:onClick="profile"
             />
         <item android:id="@+id/contact"
             android:icon="@drawable/contact"
@@ -26,4 +32,15 @@
             />
 
         </group>
+    <item android:title="@string/profile">
+    <menu>
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_logout"
+            android:onClick="Logout"
+            android:title="Logout" />
+
+    </group>
+        </menu>
+    </item>
 </menu>

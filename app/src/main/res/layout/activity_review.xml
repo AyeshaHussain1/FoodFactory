@@ -31,54 +31,56 @@
         android:layout_marginTop="30dp"
         android:layout_marginStart="50dp"
         android:layout_below="@id/line_user"
-        android:text="Upload picture of your Food(Optional)"
+        android:text="Upload picture of your order"
         android:textColor="@color/colorAccent"
         android:textSize="15sp" />
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:id="@+id/Image"
+        android:id="@+id/imageToUploadIV"
         android:layout_below="@id/TV2"
         android:layout_centerInParent="true"
-        android:background="@drawable/background_round"
-        android:src="@drawable/food_review"
+        android:background="@drawable/photo"
         android:padding="20dp"
         android:layout_marginTop="40dp"/>
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/Image"
-        android:layout_marginStart="230dp"
-        android:background="@drawable/camera"
-        android:layout_marginBottom="50dp"
-        />
+
     <EditText
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:id="@+id/review_ET1"
-        android:layout_below="@+id/Image"
+        android:id="@+id/Review"
+        android:layout_below="@+id/imageToUploadIV"
         android:inputType="text"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:layout_centerInParent="true"
         android:hint="Kindly write your comments here"
         android:maxLength="30"/>
     <Button
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:id="@+id/btn_review"
+        android:id="@+id/btn"
         android:background="@drawable/google_button"
-        android:layout_below="@id/review_ET1"
+        android:layout_below="@id/Review"
         android:layout_centerInParent="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:text="@string/user_submit"
         android:textColor="#ffff"/>
     <ImageView
         android:layout_width="200dp"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:id="@+id/thumb"
+        android:layout_below="@id/btn"
         android:layout_centerInParent="true"
-        android:layout_alignParentBottom="true"
         android:src="@drawable/thumb"
         android:padding="20dp"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginTop="50dp"/>
+    <ProgressBar
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/bar"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/progress_bar"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        />
 </RelativeLayout>

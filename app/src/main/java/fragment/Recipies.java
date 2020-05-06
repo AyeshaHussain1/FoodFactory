@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.example.project.R;
 
-public class Restaurant extends Fragment {
+public class Recipies extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,6 @@ public class Restaurant extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_restaurant, container, false);
+        View view = inflater.inflate(R.layout.fragment_recipies, container, false);
         return view;
     }}

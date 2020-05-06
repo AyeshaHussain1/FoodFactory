@@ -27,7 +27,6 @@ private ProgressBar bar;
     }
     public void splashscreen()
     {
-
         //Status_bar finish code line
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //splash screen

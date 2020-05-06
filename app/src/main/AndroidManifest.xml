@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="fragment.About_Us"></activity>
+        <activity android:name=".My_Reviews"></activity>
+        <activity android:name=".Food_Ordering" />
+        <activity android:name="fragment.About_Us" />
         <activity android:name="fragment.Review" />
         <activity android:name="fragment.Profile" />
-        <activity android:name="fragment.Restaurant" />
+        <activity android:name="fragment.Recipies" />
         <activity android:name=".Home_Page" />
         <activity android:name=".New_User" />
         <activity android:name=".Signup" />

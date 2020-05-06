@@ -7,4 +7,5 @@ android:radius="10dp"/>
         android:color="#AFAFAF"
         android:width="5dp"
         />
+
 </shape>
