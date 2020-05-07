@@ -1,14 +1,5 @@
 package com.example.project;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +9,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -92,6 +92,7 @@ public class Home_Page extends AppCompatActivity {
             firebaseAuth = FirebaseAuth.getInstance().getCurrentUser();
             if (firebaseAuth != null)
             {
+
                 name.setText(firebaseAuth.getDisplayName());
             }
             mAuth = FirebaseAuth.getInstance();
@@ -108,6 +109,7 @@ public class Home_Page extends AppCompatActivity {
                     closeMyDrawer();
                 }
             });
+            changeFragment(dash_board);
             objectNavigationView.setNavigationItemSelectedListener(
                     new NavigationView.OnNavigationItemSelectedListener() {
                         @Override
@@ -115,7 +117,7 @@ public class Home_Page extends AppCompatActivity {
                             switch (item.getItemId()) {
                                 case R.id.Review:
                                     changeFragment(review);
-                                    Toast.makeText(Home_Page.this, "your Reviews", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Home_Page.this, "Review page", Toast.LENGTH_SHORT).show();
                                     closeMyDrawer();
                                     return true;
                                 case R.id.Recipies:

@@ -20,12 +20,9 @@ import com.example.project.R;
 public class Profile extends Fragment {
     private TextView Name, Email;
     private GoogleSignInClient mGoogleSignInClient;
-
     private FirebaseAuth mAuth;
     private FirebaseUser firebaseAuth;
-
     private DatabaseReference reference;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

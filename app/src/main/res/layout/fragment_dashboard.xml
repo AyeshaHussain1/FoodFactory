@@ -10,7 +10,7 @@
         android:layout_width="150dp"
         android:padding="30dp"
         android:layout_height="140dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/logo"
         android:layout_centerInParent="true"
         android:layout_alignParentTop="true"
@@ -31,7 +31,7 @@
         android:elevation="30dp"
         android:layout_height="140dp"
         android:layout_marginTop="30dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="40dp"
         android:layout_below="@id/line_user">
 
         <RelativeLayout
@@ -102,7 +102,7 @@
         android:id="@+id/C3"
         android:elevation="30dp"
         android:layout_height="140dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:layout_below="@id/C1"
         >
@@ -118,7 +118,7 @@
                 android:layout_below="@id/imageView3"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:text="My Profile"
+                android:text="Account Details"
                 android:textSize="15sp"
                 />
 
@@ -160,7 +160,7 @@
                 android:id="@+id/imageView4"
                 android:layout_width="95dp"
                 android:layout_height="85dp"
-                android:src="@drawable/location"
+                android:src="@drawable/star"
                 android:background="@drawable/card_view4"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="15dp"
