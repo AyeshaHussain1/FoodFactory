@@ -105,7 +105,7 @@ public class Home_Page extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     changeFragment(myprofile);
-                    Toast.makeText(Home_Page.this, "Opening Profile", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Home_Page.this, "My Profile", Toast.LENGTH_SHORT).show();
                     closeMyDrawer();
                 }
             });
