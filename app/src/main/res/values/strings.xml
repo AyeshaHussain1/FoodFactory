@@ -32,4 +32,6 @@
     <string name="my_profile">My Profile</string>
     <string name="profile">Profile</string>
     <string name="home">Home</string>
+    <string name="about"><i><b>FoodFactory</b></i> is a food app where you can find recipes of your favourite Food.
+        Users can give reviews about the food they cook</string>
 </resources>

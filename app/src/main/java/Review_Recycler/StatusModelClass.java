@@ -1,8 +1,9 @@
 package Review_Recycler;
 
+
 public class StatusModelClass {
 
-    private String URL, review;
+    private String URL, Review;
 
     public StatusModelClass() {
     }
@@ -12,6 +13,7 @@ public class StatusModelClass {
     }
 
     public String getreview() {
-        return review;
+        return Review;
     }
 }
+

@@ -1,10 +1,5 @@
 package fragment;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -21,6 +16,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.example.project.Home_Page;
 import com.example.project.R;
@@ -42,7 +41,7 @@ import static android.app.Activity.RESULT_OK;
 public class Review extends Fragment {
     private ImageView imageToUploadIV;
     private EditText Comments;
-    private Button btn;
+    private Button btn,back;
     private ProgressBar bar;
 
     private static final int REQUEST_CODE = 123;
@@ -63,11 +62,19 @@ public class Review extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_review, container, false);
         imageToUploadIV = view.findViewById(R.id.imageToUploadIV);
-           btn=view.findViewById(R.id.btn);
+        btn = view.findViewById(R.id.btn);
+        back=view.findViewById(R.id.back_btn);
         bar = view.findViewById(R.id.bar);
         objectFirebaseFirestore = FirebaseFirestore.getInstance();
         Comments = view.findViewById(R.id.Review);
-        objectStorageReference = FirebaseStorage.getInstance().getReference("Gallery");
+        objectStorageReference = FirebaseStorage.getInstance().getReference("Reviews");
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Home_Page.class);
+                startActivity(intent);
+            }
+        });
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,6 +90,7 @@ public class Review extends Fragment {
         });
         return view;
     }
+
     private void openGallery() {
         try {
             Intent objectIntent = new Intent(); //Step 1:create the object of intent
@@ -110,6 +118,7 @@ public class Review extends Fragment {
 
                 objectBitmap = MediaStore.Images.Media.getBitmap(applicationContext.getContentResolver(), imageDataInUriForm);
                 isImageSelected = true;
+                imageToUploadIV.setImageBitmap(objectBitmap);
 
             } else if (requestCode != REQUEST_CODE) {
                 Toast.makeText(getActivity(), "Request code doesn't match", Toast.LENGTH_SHORT).show();
@@ -154,16 +163,16 @@ public class Review extends Fragment {
                             String url = task.getResult().toString();
                             Map<String, Object> objectMap = new HashMap<>();
                             objectMap.put("URL", url);
-                            objectMap.put("Comments", Review);
+                            objectMap.put("Review", Review);
 //
-                            objectFirebaseFirestore.collection("Gallery")
+                            objectFirebaseFirestore.collection("Reviews")
                                     .document(Comments.getText().toString())
                                     .set(objectMap)
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
                                             bar.setVisibility(View.INVISIBLE);
-                                            Toast.makeText(getActivity(), "Fails To Upload Image URL: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getActivity(), "Failed To Upload Image URL: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                                         }
                                     })
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -182,7 +191,7 @@ public class Review extends Fragment {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         bar.setVisibility(View.INVISIBLE);
-                        Toast.makeText(getActivity(), "Fails To Upload Image: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Failed To Upload Image: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
             } else if (imageDataInUriForm == null) {
@@ -200,6 +209,7 @@ public class Review extends Fragment {
             Toast.makeText(getActivity(), "uploadOurImage:" + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
+
     private String getExtension(Uri imageDataInUriForm) {
         try {
             Context applicationContext = Home_Page.getContextOfApplication();

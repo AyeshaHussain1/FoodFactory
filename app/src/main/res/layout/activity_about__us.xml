@@ -5,15 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="fragment.About_Us">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/user_TV"
+        android:fontFamily="@font/bubblegum_sans"
+        android:text="About Us"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp" />
+
     <ImageView
-        android:layout_width="150dp"
+        android:layout_width="100dp"
         android:padding="30dp"
-        android:layout_height="140dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="100dp"
+       android:layout_below="@id/user_TV"
         android:background="@drawable/logo"
         android:layout_centerInParent="true"
-        android:layout_alignParentTop="true"
         android:id="@+id/IV_Main"
+        android:layout_marginTop="5dp"
         android:elevation="25dp"
         />
     <View
@@ -24,4 +35,12 @@
         android:layout_below="@id/IV_Main"
         android:layout_centerInParent="true"
         android:background="#D5D4D4"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:padding="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@id/line_user"
+        android:text="@string/about"/>
 </RelativeLayout>

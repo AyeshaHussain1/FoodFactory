@@ -18,7 +18,7 @@ import com.example.project.R;
 
 
 public class Dashboard extends Fragment {
-    private ImageView Card2,card4;
+    private ImageView Card1,Card2,Card3,Card4;
     public static Context contextOfApplication;
     @Override
     public void onCreate(Bundle SavedInstanceState) {
@@ -31,12 +31,22 @@ public class Dashboard extends Fragment {
         View view=inflater.inflate(R.layout.fragment_dashboard,container,false);
 
        ImageView Card2=(ImageView) view.findViewById(R.id.imageView2);
+        ImageView Card3=(ImageView) view.findViewById(R.id.imageView3);
         ImageView Card4=(ImageView) view.findViewById(R.id.imageView4);
+
 
         Card2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(android.view.View v) {
                 Intent intent = new Intent(getActivity(), Food_Ordering.class);
+                startActivity(intent);
+            }
+        });
+
+        Card3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(android.view.View v) {
+                Intent intent = new Intent(getActivity(), Recipies.class);
                 startActivity(intent);
             }
         });

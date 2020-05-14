@@ -4,13 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fadeScrollbars="true"
-    android:background="#F3FFFAF9"
+    android:background="@drawable/first"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/logo_IV"
         android:layout_width="200dp"
         android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
         android:layout_centerInParent="true"
         android:background="@drawable/logo"
         android:scaleType="centerCrop"

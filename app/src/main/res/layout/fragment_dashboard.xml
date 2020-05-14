@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/back"
+    android:background="@color/white"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="fragment.Dashboard">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <ImageView
         android:layout_width="150dp"
         android:padding="30dp"
         android:layout_height="140dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/logo"
         android:layout_centerInParent="true"
         android:layout_alignParentTop="true"
@@ -24,15 +31,17 @@
         android:layout_marginTop="10dp"
         android:layout_below="@id/IV_Main"
         android:layout_centerInParent="true"
-        android:background="#D5D4D4"/>
+        android:background="#EFECEC"/>
+
     <androidx.cardview.widget.CardView
-        android:layout_width="130dp"
+        android:layout_width="120dp"
         android:id="@+id/C1"
         android:elevation="30dp"
-        android:layout_height="140dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="40dp"
-        android:layout_below="@id/line_user">
+        android:layout_height="130dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="45dp"
+        android:layout_below="@id/line_user"
+        tools:ignore="NotSibling">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -44,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageView1"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="Recipies"
                 android:textSize="15sp"
                 />
@@ -61,14 +70,15 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
-        android:layout_width="130dp"
+        android:layout_width="120dp"
         android:id="@+id/C2"
-        android:layout_height="140dp"
+        android:layout_height="130dp"
         android:elevation="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@id/line_user"
         android:layout_toRightOf="@id/C1"
-        android:layout_marginLeft="20dp">
+        android:layout_marginLeft="20dp"
+        tools:ignore="NotSibling">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -80,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageView2"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="Order Food"
                 android:textSize="15sp"
                 />
@@ -98,11 +108,11 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="130dp"
+        android:layout_width="120dp"
         android:id="@+id/C3"
         android:elevation="30dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="40dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="45dp"
         android:layout_marginTop="20dp"
         android:layout_below="@id/C1"
         >
@@ -117,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageView3"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="Account Details"
                 android:textSize="15sp"
                 />
@@ -134,9 +144,9 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
-        android:layout_width="130dp"
+        android:layout_width="120dp"
         android:id="@+id/C4"
-        android:layout_height="140dp"
+        android:layout_height="130dp"
         android:elevation="30dp"
         android:layout_marginTop="20dp"
         android:layout_below="@id/C2"
@@ -152,8 +162,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageView4"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
-                android:text="My Reviews"
+                android:layout_marginTop="5dp"
+                android:text="Reviews"
                 android:textSize="15sp"
                 />
             <ImageView
@@ -166,7 +176,6 @@
                 android:layout_marginTop="15dp"
                 />
         </RelativeLayout>
-
     </androidx.cardview.widget.CardView>
-
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

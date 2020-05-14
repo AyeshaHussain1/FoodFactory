@@ -1,6 +1,5 @@
 package com.example.project;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,9 +7,11 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ProgressBar;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 
 public class MainActivity extends AppCompatActivity {
-    private static final int SPLASH_SCREEN = 2000;
+    private static final int SPLASH_SCREEN = 4000;
 private ProgressBar bar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +19,6 @@ private ProgressBar bar;
         setContentView(R.layout.activity_main);
         splashscreen();
         connectionOfXml();
-        bar.setVisibility(View.VISIBLE);
 
     }
     public void connectionOfXml()
@@ -34,6 +34,8 @@ private ProgressBar bar;
             @Override
             public void run()
             {
+                bar.setVisibility(View.VISIBLE);
+
                 Intent intent = new Intent(MainActivity.this, Login_Page.class);
                 startActivity(intent);
                 finish();

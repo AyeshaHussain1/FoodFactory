@@ -1,8 +1,5 @@
 package com.example.project;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +8,9 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -56,7 +56,7 @@ private EditText Name;
             Login.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(New_User.this, MainActivity.class));
+                    startActivity(new Intent(New_User.this, Login_Page.class));
                     finish();
                 }
             });
@@ -149,11 +149,14 @@ private EditText Name;
                                                 objectMap.put("Username", Name.getText().toString());
                                                 objectMap.put("Email", Email.getText().toString());
                                                 objectFirebaseFireStore.collection(CollectionName)
-                                                        .document(Name.getText().toString()).set(objectMap)
+                                                        .document(Name.getText().toString())
+                                                        .set(objectMap)
                                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                             @Override
                                                             public void onSuccess(Void aVoid) {
                                                                 bar.setVisibility(View.INVISIBLE);
+                                                                Name.setText("");
+                                                                Email.setText("");
                                                                 Toast.makeText(New_User.this, "Data Added Successfully", Toast.LENGTH_SHORT).show();
                                                             }
                                                         })
